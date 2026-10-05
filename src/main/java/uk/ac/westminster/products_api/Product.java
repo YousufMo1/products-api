@@ -19,6 +19,7 @@ public class Product {
     public Long getId() { return id;
     }
 
+    //removing getter() drops field from json
     public String getName() { return name;
     }
 
