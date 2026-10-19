@@ -12,8 +12,22 @@ public class ProductService {
 
     //returns the first item in the list but can alter the list - modify/choose another method to avoid this
     public List<Product> getAllProducts() {
+
         return products;
     }
+
+    //adds two object to the 'products' using constructor method
+    public ProductService() {
+        products.add(new DigitalProduct(
+                nextId++, "Clean Code (E-book)", 29.99,
+                "/downloads/clean-code.pdf", 4.2));
+
+        products.add(new PhysicalProduct(
+                nextId++, "27-inch Monitor", 249.99,
+                5.4, "61cm x 41cm x 18cm"));
+    }
+
+
 
     //increments to the next item in the 'products' list and returns that item
     public Product addProduct(Product product) {
@@ -30,6 +44,7 @@ public class ProductService {
     }
 
     public void deleteProduct(Long id) {
+
         products.removeIf(p -> p.getId().equals(id));
     }
 }
