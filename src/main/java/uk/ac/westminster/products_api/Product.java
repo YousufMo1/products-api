@@ -1,9 +1,11 @@
 package uk.ac.westminster.products_api;
 
-public class Product {
+//declare as abstract - in our implementation, we do not need to instantiate this generic class
+public abstract class Product {
     private Long id;
     private String name;
     private double price;
+    private double discountedPrice;
 
     //empty constructor method
     public Product() {
@@ -20,10 +22,12 @@ public class Product {
     }
 
     //removing getter() drops field from json
-    public String getName() { return name;
+    public String getName() {
+        return name;
     }
 
-    public double getPrice() { return price;
+    public double getPrice() {
+        return price;
     }
 
     public void setId(Long id) {
@@ -38,5 +42,7 @@ public class Product {
         this.price = price;
     }
 
+    //placeholder for subclasses - each subclass must contain their own version of this method or error
+    public abstract String getSummary();
 
 }

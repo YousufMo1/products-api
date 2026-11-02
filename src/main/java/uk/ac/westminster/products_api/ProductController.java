@@ -34,7 +34,7 @@ public class ProductController {
 
     //add POST endpoint
     @PostMapping("/products")
-    public Product addProduct(@RequestBody Product product) {
+    public Product addProduct(@RequestBody DigitalProduct product) {
         return productService.addProduct(product);
     }
 
